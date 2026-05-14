@@ -8,7 +8,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ToppingCell()
+            ToppingCell(
+                topping = Topping.Pepperoni,
+                placement = ToppingPlacement.Left,
+                onClickTopping = {}
+            )
         }
     }
 
