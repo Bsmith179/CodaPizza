@@ -16,7 +16,9 @@ import androidx.compose.ui.text.intl.Locale.Companion.current
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 
 
 
@@ -42,17 +44,7 @@ fun PizzaBuilderScreen(
     }
 }
 
-private var pizza =
-    Pizza(
-        toppings = mapOf(
-            Topping.Pepperoni to ToppingPlacement.All,
-            Topping.Pineapple to ToppingPlacement.All
-        )
-    )
-    set(value) {
-        Log.d("PizzaBuilderScreen", "Reassigned pizza to $value")
-        field = value
-    }
+private var pizza by mutableStateOf(Pizza())
 
 @Composable
 private fun ToppingsList(
