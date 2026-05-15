@@ -22,6 +22,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 
+// Creates the pop-up that appears to let a user select which portion of the
+// pizza a topping should be added to.
 @Composable
 fun ToppingPlacementDialog(
     topping: Topping,
@@ -47,7 +49,7 @@ fun ToppingPlacementDialog(
                         }
                     )
                 }
-
+                // Used to remove added toppings
                 ToppingPlacementOption(
                     placementName = R.string.placement_none,
                     onClick = {
@@ -60,6 +62,8 @@ fun ToppingPlacementDialog(
     }
 }
 
+// Gets the placement options from the enum in ToppingPlacement.kt
+// and styles the choice buttons.
 @Composable
 private fun ToppingPlacementOption(
     @StringRes placementName: Int,

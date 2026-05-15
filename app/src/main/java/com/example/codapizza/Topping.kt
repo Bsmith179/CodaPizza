@@ -10,6 +10,8 @@ package com.example.codapizza
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
+
+// Assigns each topping option a display name and an image reference
 enum class Topping(
     @StringRes val toppingName: Int,
     @DrawableRes val pizzaOverlayImage: Int
@@ -42,5 +44,23 @@ enum class Topping(
     Pineapple(
         toppingName = R.string.topping_pineapple,
         pizzaOverlayImage = R.drawable.topping_pineapple
+    ),
+
+    Onion(
+        toppingName = R.string.topping_onion,
+        pizzaOverlayImage = R.drawable.topping_onion
+    ),
+
+    Spinach(
+        toppingName = R.string.topping_spinach,
+        pizzaOverlayImage = R.drawable.topping_spinach
+    ),
+
+    ExtraCheese(
+        toppingName = R.string.topping_extra_cheese,
+        pizzaOverlayImage = R.drawable.topping_extra_cheese
     )
+
 }
+
+

@@ -14,6 +14,7 @@ import kotlinx.parcelize.Parcelize
 data class Pizza(
     val toppings: Map<Topping, ToppingPlacement> = emptyMap()
 ) : Parcelable {
+    //Calculates the total cost of each pizza as the user adds and removes toppings.
     val price: Double
         get() = 9.99 + toppings.asSequence()
             .sumOf { (_, toppingPlacement) ->
@@ -23,6 +24,7 @@ data class Pizza(
                 }
             }
 
+    // Returns a copy of the pizza state
     fun withTopping(topping: Topping, placement: ToppingPlacement?): Pizza {
         return copy(
             toppings = if (placement == null) {

@@ -35,6 +35,8 @@ private fun PizzaHeroImagePreview() {
     )
 }
 
+// Creates the changing pizza image using images overlaid in a box that
+// correspond to the users topping selection from ToppingList.kt
 @Composable
 fun PizzaHeroImage(
     pizza: Pizza,
@@ -44,6 +46,7 @@ fun PizzaHeroImage(
         modifier = modifier
             .aspectRatio(1f)
     ) {
+        //A static image of the crust that every pizza comes with
         Image(
             painter = painterResource(R.drawable.pizza_crust),
             contentDescription = stringResource(R.string.pizza_preview),
@@ -51,6 +54,7 @@ fun PizzaHeroImage(
 
         )
 
+        //Draws the chosen topping
         pizza.toppings.forEach { (topping, placement) ->
             Image(
                 painter = painterResource(topping.pizzaOverlayImage),
@@ -66,6 +70,9 @@ fun PizzaHeroImage(
                         Left, Right -> 0.5f
                         All -> 1.0f
                     })
+
+                    // Tells the painter which part of the image to prioritize showing if
+                    // a user puts it only half of their pizza.
                     .align(when (placement) {
                         Left -> Alignment.CenterStart
                         Right -> Alignment.CenterEnd
