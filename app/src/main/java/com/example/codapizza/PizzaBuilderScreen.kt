@@ -1,6 +1,11 @@
+/*Coda Pizza
+Brigitte Smith
+This application opens to the screen of a pizza builder with live price updates as you create your pie.
+May 15, 2026
+ */
+
 package com.example.codapizza
 
-import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
