@@ -8,11 +8,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ToppingCell(
-                topping = Topping.Pepperoni,
-                placement = ToppingPlacement.Left,
-                onClickTopping = {}
-            )
+            PizzaBuilderScreen()
         }
     }
 
