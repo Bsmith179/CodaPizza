@@ -76,10 +76,15 @@ private fun ToppingsList(
         )
     }
 
-
     LazyColumn(
         modifier = modifier
     ) {
+        item {
+            PizzaHeroImage(
+                pizza = pizza,
+                modifier = Modifier.padding(16.dp)
+            )
+        }
         items(Topping.values()) { topping ->
             ToppingCell(
                 topping = topping,
