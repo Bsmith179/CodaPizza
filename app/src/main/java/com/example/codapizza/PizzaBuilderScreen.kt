@@ -14,6 +14,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -39,6 +40,10 @@ fun PizzaBuilderScreen(
     Column(
         modifier = modifier
     ) {
+        TopAppBar(
+            title = { Text(stringResource(R.string.app_name)) }
+        )
+
         ToppingsList(
             pizza = pizza,
             onEditPizza = { pizza = it },
